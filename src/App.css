@@ -1,38 +1,165 @@
+/* src/App.css */
 .App {
   text-align: center;
+  margin-top: 50px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input {
+  padding: 10px;
+  font-size: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  margin: 0 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+li button {
+  margin-left: 15px;
+}
+
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* 完成按鈕 (綠色) */
+.incompleteButton {
+  background-color: #4CAF50; /* 綠色背景 */
   color: white;
+  border: 2px solid rgb(189, 189, 189);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition-duration: 0.4s;
 }
 
-.App-link {
-  color: #61dafb;
+.incompleteButton:hover {
+  background-color: white;
+  color: #4CAF50;
+  border: 2px solid #4CAF50;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 未完成按鈕 (灰色) */
+.completeButton {
+  background-color: #808080; /* 灰色背景 */
+  color: white;
+  border: 2px solid rgb(189, 189, 189);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition-duration: 0.4s;
+}
+
+.completeButton:hover {
+  background-color: white;
+  color: #808080;
+  border: 2px solid #808080;
+}
+
+/* 刪除線 */
+td {
+  text-decoration: none;
+}
+td .completeButton ~ button {
+  text-decoration: line-through;
+}
+
+/* 刪除按鈕專用樣式 */
+.deleteButton {
+  background-color: red; /* 紅色背景 */
+  color:#ddd; /* 白色文字 */
+  font-weight: 700;/* 粗體 */
+  border-radius: 5px;
+}
+
+.deleteButton:hover {
+  background-color: white; /* 白色懸停背景 */
+  color: red; /* 紅色文字 */
+  border: 2px solid red; /* 紅色邊框 */
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+.back-btn{
+  background-color: #808080; /* 灰色背景 */
+  color: white;
+  border: 2px solid rgb(189, 189, 189);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.on .star {
+  color: rgb(255, 255, 0);
+}
+
+.off .star {
+  color: rgb(239, 239, 239);
+}
+
+.star {
+  font-size: 1.5rem;
+  padding: 5px;
+}
+
+.star-rating {
+  display: flex;
+  flex-direction: row; /* 垂直排列按鈕 */
+  align-items: center; /* 垂直居中，或者使用 left/center/right 根據需要 */
+  justify-content: center;
+}
+
+.star-rating button{
+  margin: 2px; /* 適度的外邊距，確保每顆星星互不重疊 */
+  border-radius: 50%; /* 使按鈕的形狀變圓形 */
+  border: none; /* 取消邊框 */
+  background-color: #fcc060;
+  cursor: pointer;
 }
